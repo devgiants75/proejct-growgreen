@@ -1,1 +1,11 @@
 새로운 작업시작
+
+// 20240116
+// 1. src: 폴더 작성
+// project-lsa 프로젝트 폴더에 있는 src 내의 폴더 생성
+
+// 2. package.json()
+// 의존성 설치: axios, zustand, json-server, react-route-dom
+
+// 3. App.tsx 파일 작성
+// 프로젝트 메인 화면 구성에 따라 빈 <></> 사이에 주석으로 들어갈 컴포넌트 표시
