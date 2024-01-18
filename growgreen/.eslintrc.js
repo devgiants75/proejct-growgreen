@@ -19,6 +19,7 @@ module.exports = {
     ecmaVersion: 14,
     sourceType: 'module',
     project: './tsconfig.json',
+    tsconfigRootDir: __dirname, // parsing error
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
@@ -38,6 +39,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'global-require': 0,
     'react/jsx-no-useless-fragment': [2, { allowExpressions: true }], // Fragment
+    "import/prefer-default-export": off, // parsing error
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js'], // 
 };
