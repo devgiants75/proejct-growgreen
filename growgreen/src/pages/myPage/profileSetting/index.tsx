@@ -1,10 +1,10 @@
 import React from 'react';
 
-// 홈 화면 페이지
+// 프로필 설정 페이지
 export default function index() {
   return (
     <div>
-      <h2>Home</h2>
+      <p>profileSetting</p>
     </div>
   );
 }

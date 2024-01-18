@@ -1,10 +1,10 @@
 import React from 'react';
 
-// 홈 화면 페이지
+// 작성된 게시물 페이지
 export default function index() {
   return (
     <div>
-      <h2>Home</h2>
+      <p>post</p>
     </div>
   );
 }
