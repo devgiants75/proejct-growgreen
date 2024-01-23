@@ -7,15 +7,15 @@ export const Header = styled.header`
 export const Inner = styled.div`
   display: flex;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1440rem;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 16rem;
   & > * {
     width: 100%;
   }
 
   @media screen and (min-width: 768px) {
-    padding: 0 48px;
+    padding: 0 48rem;
   }
 `;
 
@@ -34,14 +34,14 @@ export const ButtonWrapper = styled.div`
 
   & a {
     cursor: pointer;
-    height: 33px;
-    line-height: 33px;
+    height: 33rem;
+    line-height: 33rem;
     background-color: #0c243b;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 8rem;
     border: 0;
-    padding: 0 12px;
+    padding: 0 12rem;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 13rem;
   }
 `;

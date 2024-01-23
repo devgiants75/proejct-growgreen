@@ -52,6 +52,9 @@ const GlobalStyled = createGlobalStyle`
   body {
     font-size: 16rem;
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    line-height: 1.5;
+    word-break: keep-all;
+    word-wrap: break-word;
   }
   
   a {
