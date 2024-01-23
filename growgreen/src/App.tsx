@@ -33,12 +33,18 @@ import PersonalInquiry from './pages/myPage/personalInquiry';
 import PostWritten from './pages/myPage/postWritten';
 import ProfileSetting from './pages/myPage/profileSetting';
 import Settings from './pages/myPage/settings';
+import Exercise from './pages/exercise';
+import Diet from './pages/diet';
+import Community from './pages/community';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* 404page */}
+      <Route path="/exercise" element={<Exercise />} />
+      <Route path="/diet" element={<Diet />} />
+      <Route path="/community" element={<Community />} />
+      <Route path="/challenge" element={<Challenge />} />
       <Route path="*" element={<Page404 />} />
       {/* auth */}
       <Route path="/findID" element={<FindID />} />
