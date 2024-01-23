@@ -37,8 +37,9 @@ import Settings from './pages/myPage/settings';
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       {/* 404page */}
-      <Route path="/page404" element={<Page404 />} />
+      <Route path="*" element={<Page404 />} />
       {/* auth */}
       <Route path="/findID" element={<FindID />} />
       <Route path="/findPassword" element={<FindPassword />} />
