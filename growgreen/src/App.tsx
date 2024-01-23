@@ -45,7 +45,7 @@ function App() {
       <Route path="/diet" element={<Diet />} />
       <Route path="/community" element={<Community />} />
       <Route path="/challenge" element={<Challenge />} />
-      <Route path="*" element={<Page404 />} />
+      <Route path="/*" element={<Page404 />} />
       {/* auth */}
       <Route path="/findID" element={<FindID />} />
       <Route path="/findPassword" element={<FindPassword />} />
