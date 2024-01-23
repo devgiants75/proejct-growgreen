@@ -8,14 +8,14 @@ const API_BASE_URL = 'https://localhost:5000';
 // Auth API Endpoints
 // 회원가입 관련 API
 export const authApi = {
-  // 회원가입 
+  // 회원가입
   // POST: auth/register
   // 요청 바디
   // 응답
   register: (userData: { username: string; email: string; password: string }) =>
     axios.post(`${API_BASE_URL}/users`, userData),
 
-  // 로그인 
+  // 로그인
   // POST: /auth/login
   // 요청 바디
   // 응답
@@ -92,11 +92,7 @@ export const communityApi = {
   postComment: (
     postId: string,
     commentData: { userId: string; content: string },
-  ) =>
-    axios.post(
-      `${API_BASE_URL}/comments/${postId}`,
-      commentData,
-    ),
+  ) => axios.post(`${API_BASE_URL}/comments/${postId}`, commentData),
 
   updateComment: (commentId: string, updateData: { content: string }) =>
     axios.put(`${API_BASE_URL}/comments/${commentId}`, updateData),
