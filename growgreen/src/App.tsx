@@ -29,7 +29,6 @@ import Home from './pages/home';
 import CommentsWritten from './pages/myPage/commentsWritten';
 import EditPersonalInfo from './pages/myPage/editPersonalInfo';
 import MyPageHome from './pages/myPage/myPageHome';
-import PersonalInquiry from './pages/myPage/personalInquiry';
 import PostWritten from './pages/myPage/postWritten';
 import ProfileSetting from './pages/myPage/profileSetting';
 import Settings from './pages/myPage/settings';
@@ -71,7 +70,6 @@ function App() {
       <Route path="/commentsWritten" element={<CommentsWritten />} />
       <Route path="/editPersonalInfo" element={<EditPersonalInfo />} />
       <Route path="/myPageHome" element={<MyPageHome />} />
-      <Route path="/personalInquiry" element={<PersonalInquiry />} />
       <Route path="/postWritten" element={<PostWritten />} />
       <Route path="/profileSetting" element={<ProfileSetting />} />
       <Route path="/settings" element={<Settings />} />
