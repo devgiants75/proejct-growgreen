@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Footer = styled.footer`
   width: 100%;
-  border-top: 1px solid #d7dce5;
+  border-top: 1px solid var(--gray40);
 `;
 
 export const Inner = styled.div`
@@ -26,7 +26,7 @@ export const Menu = styled.div`
 
   & a {
     display: inline-block;
-    color: #5c667b;
+    color: var(--gray90);
     font-size: 14rem;
     position: relative;
   }
@@ -36,7 +36,7 @@ export const Menu = styled.div`
     position: absolute;
     width: 1rem;
     height: 10rem;
-    background: #ddd;
+    background: var(--gray40);
     top: 50%;
     left: -12rem;
     transform: translateY(-50%);
@@ -46,5 +46,5 @@ export const Menu = styled.div`
 export const CopyRight = styled.p`
   margin-top: 8rem;
   font-size: 14rem;
-  color: #5c667b;
+  color: var(--gray90);
 `;

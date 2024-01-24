@@ -36,7 +36,7 @@ export const ButtonWrapper = styled.div`
     cursor: pointer;
     height: 33rem;
     line-height: 33rem;
-    background-color: #0c243b;
+    background-color: var(--gray120);
     color: #fff;
     border-radius: 8rem;
     border: 0;
