@@ -1,5 +1,32 @@
-import { Box, Container, Tab, Tabs, Typography } from '@mui/material';
 import React, { useState } from 'react';
+import { Box, Container, Tab, Tabs, Typography } from '@mui/material';
+import { styled } from '@mui/system';
+
+const StyledContainer = styled(Container)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100vh',
+  width: '80%',
+  margin: '0 auto',
+});
+
+const StyledTabPanel = styled('div')({
+  backgroundColor: '#f5f5f5',
+  borderRadius: '5px',
+  boxShadow: '0 3px 5px rgba(0, 0, 0, 0.2)',
+  width: '100%',
+  padding: '20px',
+});
+
+const StyledTabs = styled(Tabs)({
+  marginBottom: '20px',
+});
+
+const StyledTypography = styled(Typography)({
+  fontSize: '1.2rem',
+});
 
 interface TabPanelProps {
   children: React.ReactNode;
@@ -9,7 +36,7 @@ interface TabPanelProps {
 
 function TabPanel({ children, value, index }: TabPanelProps) {
   return (
-    <div
+    <StyledTabPanel
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -17,31 +44,31 @@ function TabPanel({ children, value, index }: TabPanelProps) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <StyledTypography>{children}</StyledTypography>
         </Box>
       )}
-    </div>
+    </StyledTabPanel>
   );
 }
 
 function Index() {
-  const [selectedTab, setSelectedTab] = useState<number>(0);
+  const [selectedTab, setSelectedTab] = useState(0);
 
-  const handelChange = (event: React.ChangeEvent<object>, newValue: number) => {
+  const handleChange = (event: React.ChangeEvent<object>, newValue: number) => {
     setSelectedTab(newValue);
   };
 
   return (
-    <Container>
-      <Tabs
+    <StyledContainer>
+      <StyledTabs
         value={selectedTab}
-        onChange={handelChange}
+        onChange={handleChange}
         aria-label="simple tabs example"
       >
         <Tab label="전체" />
         <Tab label="질문 & 고민" />
         <Tab label="자유게시판" />
-      </Tabs>
+      </StyledTabs>
       <TabPanel value={selectedTab} index={0}>
         전체 내용이 표시됩니다.
       </TabPanel>
@@ -51,7 +78,7 @@ function Index() {
       <TabPanel value={selectedTab} index={2}>
         자유게시판 내용이 표시됩니다.
       </TabPanel>
-    </Container>
+    </StyledContainer>
   );
 }
 
