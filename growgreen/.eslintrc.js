@@ -29,6 +29,8 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    semi: ['error', 'always'], // 문장의 끝에 세미콜론을 붙임
+    'import/no-extraneous-dependencies': 0, // 테스트 또는 개발환경을 구성하는 파일에서는 devDependency 사용을 허용
     'no-unused-vars': ['warn'],
     'react/jsx-filename-extension': [
       'warn',
