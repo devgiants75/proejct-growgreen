@@ -3,14 +3,10 @@ import React, { useState } from 'react';
 import * as S from './Tab.Style';
 
 interface IProps {
-  // activeTab: number;
-  // onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  // children: React.ReactNode;
   links: {
     id: number;
     name: string;
     path: string;
-    content?: JSX.Element;
   }[];
   index: number;
 }
