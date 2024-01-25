@@ -22,7 +22,6 @@ import Recommend from './pages/diet/recommend';
 // exercise
 import HomeTraining from './pages/exercise/homeTraining';
 import Stretch from './pages/exercise/stretch';
-import PostureCorrection from './pages/exercise/postureCorrection';
 // home
 import Home from './pages/home';
 // myPage
@@ -44,7 +43,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/exercise" element={<Exercise />} />
+        <Route path="/exercise">
+          <Route index element={<Exercise />} />
+          <Route path="home-training" element={<HomeTraining />} />
+          <Route path="stretch" element={<Stretch />} />
+        </Route>
+
         <Route path="/diet" element={<Diet />} />
         <Route path="/community" element={<Community />} />
         <Route path="/challenge" element={<Challenge />} />
@@ -67,7 +71,6 @@ function App() {
         {/* ecercise */}
         <Route path="/homeTraining" element={<HomeTraining />} />
         <Route path="/stretch" element={<Stretch />} />
-        <Route path="/postureCorrection" element={<PostureCorrection />} />
         {/* home */}
         <Route path="/home" element={<Home />} />
         {/* myPage */}
