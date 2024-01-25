@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Footer = styled.footer`
   width: 100%;
   border-top: 1px solid var(--gray40);
+  margin-top: 100rem;
 `;
 
 export const Inner = styled.div`
