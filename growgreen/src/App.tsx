@@ -14,7 +14,6 @@ import Logout from './pages/auth/logout';
 import Challenge from './pages/challenge';
 // community
 import Board from './pages/community/board';
-import Entire from './pages/community/entire';
 import Inquiry from './pages/community/inquiry';
 // diet
 import Member from './pages/diet/member';
@@ -49,6 +48,13 @@ function App() {
           <Route path="stretch" element={<Stretch />} />
         </Route>
 
+        <Route path="/community">
+          <Route index element={<Community />} />
+          <Route path="board" element={<Board />} />
+          <Route path="inquiry" element={<Inquiry />} />
+        </Route>
+
+
         <Route path="/diet" element={<Diet />} />
         <Route path="/community" element={<Community />} />
         <Route path="/challenge" element={<Challenge />} />
@@ -63,7 +69,6 @@ function App() {
         <Route path="/challenge" element={<Challenge />} />
         {/* commnity */}
         <Route path="/board" element={<Board />} />
-        <Route path="/entire" element={<Entire />} />
         <Route path="/inquiry" element={<Inquiry />} />
         {/* diet */}
         <Route path="/member" element={<Member />} />
