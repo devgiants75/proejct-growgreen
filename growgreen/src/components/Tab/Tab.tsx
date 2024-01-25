@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import * as S from './Tab.Style';
 
@@ -27,6 +27,7 @@ function Tabs({ links, index }: IProps) {
           to={item.path}
           className={activeTab === item.path ? 'active' : ''}
           onClick={() => handleClick(item.path)}
+          key={item.id}
         >
           {item.name}
         </Link>
