@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Profile from './profile';
+import Activity from './Activity';
 
-// myPage
-
-const myPage: React.FC = () => {
+function Index() {
   return (
-    <div>
-      <div>
-        <Link to="./profile">profile</Link>
-        <Link to="./activity">activity</Link>
-      </div>
+    <>
+      {/* 프로필 */}
+      <Link to="/profilㄷ">Profile</Link>
+      <br />
+      {/* 활동내역 */}
+      <Link to="/activity">Activity</Link>
 
       <Outlet />
-    </div>
+    </>
   );
-};
+}
 
-export default myPage;
+export default Index;

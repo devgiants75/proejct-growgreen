@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // 활동 내역 (작성된 댓글/ 작성된 게시물)
-const activity: React.FC = () => {
+function Activity() {
   return (
     <div>
-      <h2>activity</h2>
+      <h2>*활동내역</h2>
       {/* 활동내역 */}
+      <Link to="/commentsWritten">작성된 댓글</Link>
+      <Link to="/postWritten">작성된 게시물</Link>
     </div>
   );
-};
+}
 
-export default activity;
+export default Activity;
