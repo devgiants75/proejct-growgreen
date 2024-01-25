@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import reset from 'styled-reset';
 
 const GlobalStyled = createGlobalStyle`
