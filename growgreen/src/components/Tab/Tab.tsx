@@ -11,7 +11,7 @@ interface IProps {
   index: number;
 }
 
-function Tabs({ links, index }: IProps) {
+function Tab({ links, index }: IProps) {
   const [activeTab, setActiveTab] = useState<string>(`${links[index].path}`);
   const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ function Tabs({ links, index }: IProps) {
   );
 }
 
-export default Tabs;
+export default Tab;
