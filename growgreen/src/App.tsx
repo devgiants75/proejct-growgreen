@@ -24,11 +24,11 @@ import Stretch from './pages/exercise/stretch';
 // home
 import Home from './pages/home';
 // myPage
-import CommentsWritten from './pages/myPage/commentsWritten';
-import EditPersonalInfo from './pages/myPage/editPersonalInfo';
+import CommentsWritten from './pages/myPage/Activity/commentsWritten';
+import EditPersonalInfo from './pages/myPage/profile/editPersonalInfo';
 import MyPageHome from './pages/myPage/myPageHome';
-import PostWritten from './pages/myPage/postWritten';
-import ProfileSetting from './pages/myPage/profileSetting';
+import PostWritten from './pages/myPage/Activity/postWritten';
+import ProfileSetting from './pages/myPage/profile/profileSetting';
 import Settings from './pages/myPage/settings';
 import Exercise from './pages/exercise';
 import Diet from './pages/diet';
