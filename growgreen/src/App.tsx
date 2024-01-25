@@ -14,7 +14,6 @@ import Logout from './pages/auth/logout';
 import Challenge from './pages/challenge';
 // community
 import Board from './pages/community/board';
-import Diary from './pages/community/diary';
 import Inquiry from './pages/community/inquiry';
 // diet
 import Member from './pages/diet/member';
@@ -22,7 +21,6 @@ import Recommend from './pages/diet/recommend';
 // exercise
 import HomeTraining from './pages/exercise/homeTraining';
 import Stretch from './pages/exercise/stretch';
-import PostureCorrection from './pages/exercise/postureCorrection';
 // home
 import Home from './pages/home';
 // myPage
@@ -44,7 +42,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/exercise" element={<Exercise />} />
+        <Route path="/exercise">
+          <Route index element={<Exercise />} />
+          <Route path="home-training" element={<HomeTraining />} />
+          <Route path="stretch" element={<Stretch />} />
+        </Route>
+
         <Route path="/diet" element={<Diet />} />
         <Route path="/community" element={<Community />} />
         <Route path="/challenge" element={<Challenge />} />
@@ -59,7 +62,6 @@ function App() {
         <Route path="/challenge" element={<Challenge />} />
         {/* commnity */}
         <Route path="/board" element={<Board />} />
-        <Route path="/diary" element={<Diary />} />
         <Route path="/inquiry" element={<Inquiry />} />
         {/* diet */}
         <Route path="/member" element={<Member />} />
@@ -67,7 +69,6 @@ function App() {
         {/* ecercise */}
         <Route path="/homeTraining" element={<HomeTraining />} />
         <Route path="/stretch" element={<Stretch />} />
-        <Route path="/postureCorrection" element={<PostureCorrection />} />
         {/* home */}
         <Route path="/home" element={<Home />} />
         {/* myPage */}
