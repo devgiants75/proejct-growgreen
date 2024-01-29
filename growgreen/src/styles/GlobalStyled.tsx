@@ -107,6 +107,7 @@ const GlobalStyled = createGlobalStyle`
     line-height: 1.5;
     word-break: keep-all;
     word-wrap: break-word;
+    overflow-x: hidden;
   }
 
   a {
