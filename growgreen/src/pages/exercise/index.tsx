@@ -1,7 +1,9 @@
-import { Outlet } from 'react-router-dom';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import SubTitle from '../../components/SubTitle/SubTitle';
 import Tab from '../../components/Tab/Tab';
+import { CardType } from '../../types';
+import CardList from '../../components/CardList/CardList';
 
 export const exerciseLinks = [
   {
@@ -22,12 +24,26 @@ export const exerciseLinks = [
 ];
 
 function Index() {
+  const [data, setData] = useState<CardType[]>([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('/data/article.json');
+      setData(response.data);
+    } catch (error) {
+      console.log('데이더를 가져오는 중 오류 발생', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <SubTitle>운동</SubTitle>
       <Tab links={exerciseLinks} index={0} />
-      <Outlet />
-      <div>exercise</div>
+      <CardList data={data} />
     </>
   );
 }
