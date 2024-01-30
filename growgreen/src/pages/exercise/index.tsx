@@ -31,7 +31,7 @@ function Index() {
       const response = await axios.get('/data/article.json');
       setData(response.data);
     } catch (error) {
-      console.log('데이더를 가져오는 중 오류 발생', error);
+      console.error('데이더를 가져오는 중 오류 발생', error);
     }
   };
 
