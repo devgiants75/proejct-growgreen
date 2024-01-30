@@ -15,9 +15,6 @@ import Challenge from './pages/challenge';
 // community
 import Board from './pages/community/board';
 import Inquiry from './pages/community/inquiry';
-// diet
-import Member from './pages/diet/member';
-import Recommend from './pages/diet/recommend';
 // exercise
 import HomeTraining from './pages/exercise/homeTraining';
 import Stretch from './pages/exercise/stretch';
@@ -33,8 +30,11 @@ import Settings from './pages/myPage/settings';
 import Exercise from './pages/exercise';
 import Diet from './pages/diet';
 import Community from './pages/community';
+import MyPage from './pages/myPage';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import Activity from './pages/myPage/Activity';
+import Profile from './pages/myPage/profile';
 
 function App() {
   return (
@@ -48,16 +48,30 @@ function App() {
           <Route path="stretch" element={<Stretch />} />
         </Route>
 
+        <Route path="/diet">
+          <Route index element={<Diet />} />
+        </Route>
+
         <Route path="/community">
           <Route index element={<Community />} />
           <Route path="board" element={<Board />} />
           <Route path="inquiry" element={<Inquiry />} />
         </Route>
 
+        <Route path="/myPage">
+          <Route index element={<MyPage />} />
+          <Route path="activity" element={<Activity />} />
+          <Route path="commentsWritten" element={<CommentsWritten />} />
+          <Route path="postWritten" element={<PostWritten />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="editPersonalInfo" element={<EditPersonalInfo />} />
+          <Route path="profileSetting" element={<ProfileSetting />} />
+        </Route>
 
         <Route path="/diet" element={<Diet />} />
         <Route path="/community" element={<Community />} />
         <Route path="/challenge" element={<Challenge />} />
+        <Route path="/myPage" element={<MyPage />} />
         <Route path="/*" element={<Page404 />} />
         {/* auth */}
         <Route path="/findID" element={<FindID />} />
@@ -70,20 +84,16 @@ function App() {
         {/* commnity */}
         <Route path="/board" element={<Board />} />
         <Route path="/inquiry" element={<Inquiry />} />
-        {/* diet */}
-        <Route path="/member" element={<Member />} />
-        <Route path="/recommend" element={<Recommend />} />
-        {/* ecercise */}
-        <Route path="/homeTraining" element={<HomeTraining />} />
-        <Route path="/stretch" element={<Stretch />} />
         {/* home */}
         <Route path="/home" element={<Home />} />
         {/* myPage */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/activity" element={<Activity />} />
+        <Route path="/postWritten" element={<PostWritten />} />
         <Route path="/commentsWritten" element={<CommentsWritten />} />
         <Route path="/editPersonalInfo" element={<EditPersonalInfo />} />
-        <Route path="/myPageHome" element={<MyPageHome />} />
-        <Route path="/postWritten" element={<PostWritten />} />
         <Route path="/profileSetting" element={<ProfileSetting />} />
+        <Route path="/myPageHome" element={<MyPageHome />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
       <Footer />

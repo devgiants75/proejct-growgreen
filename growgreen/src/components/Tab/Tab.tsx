@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import * as S from './Tab.Style';
 
@@ -11,7 +11,7 @@ interface IProps {
   index: number;
 }
 
-function Tabs({ links, index }: IProps) {
+function Tab({ links, index }: IProps) {
   const [activeTab, setActiveTab] = useState<string>(`${links[index].path}`);
   const navigate = useNavigate();
 
@@ -27,6 +27,7 @@ function Tabs({ links, index }: IProps) {
           to={item.path}
           className={activeTab === item.path ? 'active' : ''}
           onClick={() => handleClick(item.path)}
+          key={item.id}
         >
           {item.name}
         </Link>
@@ -35,4 +36,4 @@ function Tabs({ links, index }: IProps) {
   );
 }
 
-export default Tabs;
+export default Tab;

@@ -24,6 +24,11 @@ export const Logo = styled.h1`
   flex: 0 0 20%;
   display: flex;
   justify-content: flex-start;
+
+  & a {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const ButtonWrapper = styled.div`

@@ -1,13 +1,19 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import MyPageSubTab from '../myPageSubTab';
 
 // profile index
-const profile: React.FC = () => {
+function Profile() {
   return (
-    <div>
-      <h2>프로필</h2>
-      {/* 프로필 */}
-    </div>
-  );
-};
+    <>
+      {/* 프로필 수정 */}
+      <MyPageSubTab to="/profileSetting" label="프로필 수정" />
+      {/* 개인정보 수정 */}
+      <MyPageSubTab to="/editPersonalInfo" label="개인정보 수정" />
 
-export default profile;
+      <Outlet />
+    </>
+  );
+}
+
+export default Profile;
