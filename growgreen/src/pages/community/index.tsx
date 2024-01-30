@@ -2,6 +2,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import SubTitle from '../../components/SubTitle/SubTitle';
 import Tab from '../../components/Tab/Tab';
+import Community from '../../components/Community/Community';
+import { width } from '@mui/system';
 
 export const communityLink = [
   {
@@ -12,7 +14,7 @@ export const communityLink = [
   {
     id: 1,
     name: '질문 & 고민',
-    path: '/community/inquity',
+    path: '/community/inquiry',
   },
   {
     id: 2,
@@ -27,6 +29,10 @@ function Index() {
       <SubTitle>커뮤니티</SubTitle>
       <Tab links={communityLink} index={0} />
       <Outlet />
+
+      <div>
+        <p>전체 4,204건</p>
+      </div>
     </>
   );
 }
