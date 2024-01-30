@@ -1,29 +1,12 @@
+import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import Profile from './profile';
-import Activity from './Activity';
 
-const myPage: React.FC = () => {
-  return (
-    <>
-      {/* 프로필 */}
-      <Link to="/profile">Profile</Link>
-      {/* 활동내역 */}
-      <Link to="/activity">Activity</Link>
-
-      <Outlet />
-    </>
-  );
-};
-export default myPage;
-
-export function SelectedListItem() {
+export default function MyPage() {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleListItemClick = (
@@ -35,37 +18,38 @@ export function SelectedListItem() {
 
   return (
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <List component="nav" aria-label="main mailbox folders">
+      <Outlet />
+      <List component="nav" aria-label="profile tab" sx={{ ml: 2 }}>
+        <Link to="/profile">프로필</Link>
         {/* !프로필 수정 */}
         <ListItemButton
           selected={selectedIndex === 0}
           onClick={event => handleListItemClick(event, 0)}
         >
-          <ListItemIcon>{/* 아이콘 */}</ListItemIcon>
-          <ListItemText primary="프로필 수정" />
+          <Link to="/profileSetting">프로필 수정</Link>
         </ListItemButton>
-        !{/* !개인정보 수정 */}
+        {/* !개인정보 수정 */}
         <ListItemButton
           selected={selectedIndex === 1}
           onClick={event => handleListItemClick(event, 1)}
         >
-          <ListItemIcon>{/* 아이콘 */}</ListItemIcon>
-          <ListItemText primary="개인정보 수정" />
+          <Link to="/editPersonalInfo">개인정보 수정</Link>
         </ListItemButton>
       </List>
       <Divider />
-      <List component="nav" aria-label="secondary mailbox folder">
+      <List component="nav" aria-label="activity tab" sx={{ ml: 2 }}>
+        <Link to="/activity">활동내역</Link>
         <ListItemButton
           selected={selectedIndex === 2}
           onClick={event => handleListItemClick(event, 2)}
         >
-          <ListItemText primary="작성된 댓글" />
+          <Link to="/commentsWritten">작성된 댓글</Link>
         </ListItemButton>
         <ListItemButton
           selected={selectedIndex === 3}
           onClick={event => handleListItemClick(event, 3)}
         >
-          <ListItemText primary="작성된 게시글" />
+          <Link to="/postWritten">작성된 게시글</Link>
         </ListItemButton>
       </List>
     </Box>

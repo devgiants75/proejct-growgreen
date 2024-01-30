@@ -7,8 +7,7 @@ import Box from '@mui/material/Box';
 // import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { fontSize } from '@mui/system';
+import { createTheme, rgbToHex, ThemeProvider } from '@mui/material/styles';
 
 const Theme = createTheme();
 
@@ -37,6 +36,7 @@ export default function Index() {
                   로그인
                 </Typography>
                 {/* 아이디 */}
+                <p style={{ fontSize: 16 }}>아이디</p>
                 <TextField
                   required
                   fullWidth
@@ -47,8 +47,8 @@ export default function Index() {
               </Grid>
               <Grid item xs={12}>
                 {/* 비밀번호 */}
+                <p style={{ fontSize: 16 }}>비밀번호</p>
                 <TextField
-                  style={{ fontSize: '16rem' }}
                   required
                   fullWidth
                   id="password"
@@ -65,7 +65,7 @@ export default function Index() {
               sx={{ mt: 3, mb: 2 }}
               style={{ fontSize: '16rem' }}
             >
-              로그인
+              Login
             </Button>
           </form>
         </Box>
