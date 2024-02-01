@@ -5,7 +5,7 @@ import React from 'react';
 export default function Index() {
   return (
     <Container>
-      <h2>마이페이지</h2>
+      <h2>프로필 설정</h2>
     </Container>
   );
 }

@@ -8,8 +8,16 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, rgbToHex, ThemeProvider } from '@mui/material/styles';
+import styled from '@emotion/styled';
 
 const Theme = createTheme();
+
+const Btn = styled(Button)`
+  font-size: 16rem;
+`;
+const TextF = styled(TextField)`
+  font-size: 20rem;
+`;
 
 // signup (login)
 export default function Index() {
@@ -32,12 +40,16 @@ export default function Index() {
           <form onSubmit={handleSubmit} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Typography sx={{ mb: 1 }} style={{ fontSize: '20rem' }}>
+                <Typography
+                  align="center"
+                  sx={{ mb: 1 }}
+                  style={{ fontSize: '25rem' }}
+                >
                   로그인
                 </Typography>
                 {/* 아이디 */}
-                <p style={{ fontSize: 16 }}>아이디</p>
-                <TextField
+                {/* <p style={{ fontSize: 16 }}>아이디</p> */}
+                <TextF
                   required
                   fullWidth
                   id="userId"
@@ -47,8 +59,8 @@ export default function Index() {
               </Grid>
               <Grid item xs={12}>
                 {/* 비밀번호 */}
-                <p style={{ fontSize: 16 }}>비밀번호</p>
-                <TextField
+                {/* <p style={{ fontSize: 16 }}>비밀번호</p> */}
+                <TextF
                   required
                   fullWidth
                   id="password"
@@ -58,15 +70,14 @@ export default function Index() {
               </Grid>
             </Grid>
             {/* 로그인 버튼 */}
-            <Button
+            <Btn
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              style={{ fontSize: '16rem' }}
             >
               Login
-            </Button>
+            </Btn>
           </form>
         </Box>
       </Container>

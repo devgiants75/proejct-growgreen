@@ -3,8 +3,8 @@ import { Link, Outlet } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 export default function MyPage() {
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -19,8 +19,9 @@ export default function MyPage() {
   return (
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <Outlet />
-      <List component="nav" aria-label="profile tab" sx={{ ml: 2 }}>
-        <Link to="/profile">프로필</Link>
+      <List component="nav" aria-label="profile tab" sx={{ ml: 3 }}>
+        <AccountBoxIcon sx={{ fontSize: '16px', ml: 2, mr: 1 }} />
+        프로필
         {/* !프로필 수정 */}
         <ListItemButton
           selected={selectedIndex === 0}
@@ -37,8 +38,8 @@ export default function MyPage() {
         </ListItemButton>
       </List>
       <Divider />
-      <List component="nav" aria-label="activity tab" sx={{ ml: 2 }}>
-        <Link to="/activity">활동내역</Link>
+      <List component="nav" aria-label="activity tab" sx={{ ml: 3 }}>
+        활동내역
         <ListItemButton
           selected={selectedIndex === 2}
           onClick={event => handleListItemClick(event, 2)}

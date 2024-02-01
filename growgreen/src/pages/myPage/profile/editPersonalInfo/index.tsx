@@ -4,7 +4,7 @@ import React from 'react';
 export default function Index() {
   return (
     <div>
-      <p>editPersonalInfo</p>
+      <p>개인정보 수정</p>
     </div>
   );
 }
