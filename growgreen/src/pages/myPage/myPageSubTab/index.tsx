@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Box } from '@mui/material';
+import React, { useState } from 'react';
 
 interface MenuProps {
   menu: {
@@ -7,10 +8,11 @@ interface MenuProps {
     title: string;
     to: string;
   }[];
+  index: number;
 }
 
-function Tabs({ menu }: MenuProps) {
-  const [activeTab, setActiveTab] = useState<string>(`${menu[0].id}`);
+function Tabs({ menu, index }: MenuProps) {
+  const [activeTab, setActiveTab] = useState<string>(`${menu[index].to}`);
   const navigate = useNavigate();
 
   const handleClick = (list: string) => {
@@ -19,7 +21,7 @@ function Tabs({ menu }: MenuProps) {
   };
 
   return (
-    <div>
+    <Box>
       {menu.map(item => (
         <Link
           to={item.to}
@@ -30,7 +32,7 @@ function Tabs({ menu }: MenuProps) {
           {item.title}
         </Link>
       ))}
-    </div>
+    </Box>
   );
 }
 
