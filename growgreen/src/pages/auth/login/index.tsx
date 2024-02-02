@@ -42,7 +42,8 @@ function Index() {
 
       // 입력된 userId와 password가 일치하는 사용자를 찾습니다.
       const user = users.find(
-        (user: User) => user.userId === userId && user.password === password,
+        (findUser: User) =>
+          findUser.userId === userId && findUser.password === password,
       );
 
       if (user) {
