@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Tabs from '../myPageSubTab';
+import Tabs from '../myPageTab';
 
 // 마이페이지 홈
 
