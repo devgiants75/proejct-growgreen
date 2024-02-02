@@ -33,8 +33,6 @@ import Community from './pages/community';
 import MyPage from './pages/myPage';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Activity from './pages/myPage/Activity';
-import Profile from './pages/myPage/profile';
 
 function App() {
   return (
@@ -60,10 +58,8 @@ function App() {
 
         <Route path="/myPage">
           <Route index element={<MyPage />} />
-          <Route path="activity" element={<Activity />} />
           <Route path="commentsWritten" element={<CommentsWritten />} />
           <Route path="postWritten" element={<PostWritten />} />
-          <Route path="profile" element={<Profile />} />
           <Route path="editPersonalInfo" element={<EditPersonalInfo />} />
           <Route path="profileSetting" element={<ProfileSetting />} />
         </Route>
@@ -87,8 +83,6 @@ function App() {
         {/* home */}
         <Route path="/home" element={<Home />} />
         {/* myPage */}
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/activity" element={<Activity />} />
         <Route path="/postWritten" element={<PostWritten />} />
         <Route path="/commentsWritten" element={<CommentsWritten />} />
         <Route path="/editPersonalInfo" element={<EditPersonalInfo />} />
