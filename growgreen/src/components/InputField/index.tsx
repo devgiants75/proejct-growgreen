@@ -1,4 +1,5 @@
 import TextField from '@mui/material/TextField';
+// import * as S from './InputField.Style';
 
 interface InputFieldProps {
   label: string;
@@ -31,6 +32,12 @@ function Index({
       onChange={onChange}
       autoFocus={autoFocus}
       required={required}
+      sx={{
+        color: '#292e41',
+        fontSize: '20px',
+        fontFamily: 'Pretendard-SemiBold',
+        fontWeight: '400',
+      }}
     />
   );
 }

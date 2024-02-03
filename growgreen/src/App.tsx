@@ -5,8 +5,6 @@ import { Route, Routes } from 'react-router-dom';
 // 404page
 import Page404 from './pages/page404';
 // auth
-import FindID from './pages/auth/findID';
-import FindPassword from './pages/auth/findPassword';
 import Join from './pages/auth/join';
 import Login from './pages/auth/login';
 import Logout from './pages/auth/logout';
@@ -70,8 +68,6 @@ function App() {
         <Route path="/myPage" element={<MyPage />} />
         <Route path="/*" element={<Page404 />} />
         {/* auth */}
-        <Route path="/findID" element={<FindID />} />
-        <Route path="/findPassword" element={<FindPassword />} />
         <Route path="/join" element={<Join />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
