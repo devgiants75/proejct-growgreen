@@ -76,15 +76,43 @@ function Index() {
       }}
     >
       <Typography
-        component="h1"
-        variant="h4"
-        sx={{ textAlign: 'center', mb: 10 }}
+        sx={{
+          textAlign: 'center',
+          mb: 5,
+          fontSize: '40rem',
+          fontFamily: 'Pretendard-Bold',
+          fontWeight: '600',
+          color: '#292e41',
+        }}
       >
         로그인
       </Typography>
-      <Tabs value={tabValue} onChange={handleTabChange} centered>
-        <Tab label="회원 계정" value="user" />
-        <Tab label="관리자 계정" value="admin" />
+      <Tabs
+        value={tabValue}
+        onChange={handleTabChange}
+        centered
+        sx={{ color: '#797979' }}
+      >
+        <Tab
+          label="회원 계정"
+          value="user"
+          sx={{
+            color: '#292e41',
+            fontSize: '13rem',
+            fontFamily: 'Pretendard-Bold',
+            fontWeight: '400',
+          }}
+        />
+        {/* <Tab
+          label="관리자 계정"
+          value="admin"
+          sx={{
+            color: '#292e41',
+            fontSize: '13rem',
+            fontFamily: 'Pretendard-Bold',
+            fontWeight: '400',
+          }}
+        /> */}
       </Tabs>
 
       <Container component="main" maxWidth="xs">
@@ -107,6 +135,10 @@ function Index() {
               autoFocus
               value={userId}
               onChange={e => setUserId(e.target.value)}
+              sx={{
+                fontFamily: 'Pretendard-Bold',
+                fontSize: '70px', // 폰트 크기 적용x?
+              }}
             />
             <TextField
               margin="normal"
@@ -119,12 +151,21 @@ function Index() {
               autoComplete="current-password"
               value={password}
               onChange={e => setPassword(e.target.value)}
+              sx={{
+                fontFamily: 'Pretendard-Bold',
+                fontSize: '70px', // 폰트 크기 적용x?
+              }}
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{
+                mt: 3,
+                mb: 2,
+                fontFamily: 'Pretendard-Bold',
+                fontSize: '16rem',
+              }}
             >
               Login
             </Button>
