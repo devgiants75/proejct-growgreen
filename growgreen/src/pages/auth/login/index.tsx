@@ -5,8 +5,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import { Button, Container, TextField, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '../../../stores/user.store';
+import * as S from './Index.Style';
+import Input from '../../../components/Input/Input';
 
 interface LoginResponse {
   token: string;
@@ -69,51 +71,27 @@ function Index() {
   };
 
   return (
-    <Box
-      sx={{
-        width: '100%',
-        mt: 30,
-      }}
-    >
-      <Typography
-        sx={{
-          textAlign: 'center',
-          mb: 5,
-          fontSize: '40rem',
-          fontFamily: 'Pretendard-Bold',
-          fontWeight: '600',
-          color: '#292e41',
-        }}
-      >
-        로그인
-      </Typography>
-      <Tabs
-        value={tabValue}
-        onChange={handleTabChange}
-        centered
-        sx={{ color: '#797979' }}
-      >
-        <Tab
-          label="회원 계정"
-          value="user"
-          sx={{
-            color: '#292e41',
-            fontSize: '13rem',
-            fontFamily: 'Pretendard-Bold',
-            fontWeight: '400',
-          }}
-        />
-        {/* <Tab
-          label="관리자 계정"
-          value="admin"
-          sx={{
-            color: '#292e41',
-            fontSize: '13rem',
-            fontFamily: 'Pretendard-Bold',
-            fontWeight: '400',
-          }}
-        /> */}
-      </Tabs>
+    <>
+      <S.Container onSubmit={handleLogin}>
+        <S.ContainerInner>
+          <S.Title>로그인</S.Title>
+          <Input
+            label="아이디"
+            type="email"
+            value={userId}
+            onChange={e => setUserId(e.target.value)}
+          />
+          <Input
+            label="비밀번호"
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <S.Button type="submit">로그인</S.Button>
+        </S.ContainerInner>
+      </S.Container>
+
+      {/* --------------------------- */}
 
       <Container component="main" maxWidth="xs">
         <Box
@@ -172,7 +150,7 @@ function Index() {
           </Box>
         </Box>
       </Container>
-    </Box>
+    </>
   );
 }
 
