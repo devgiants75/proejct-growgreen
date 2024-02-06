@@ -42,6 +42,7 @@ module.exports = {
     'global-require': 0,
     'react/jsx-no-useless-fragment': [2, { allowExpressions: true }], // Fragment
     'import/prefer-default-export': 'off', // parsing error
+    'react/require-default-props': 'off',
   },
   ignorePatterns: ['.eslintrc.js'], //
 };

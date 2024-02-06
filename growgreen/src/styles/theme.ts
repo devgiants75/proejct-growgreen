@@ -76,6 +76,7 @@ export const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
+          transform: 'none',
           fontSize: '14rem',
         },
       },
