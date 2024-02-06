@@ -71,86 +71,24 @@ function Index() {
   };
 
   return (
-    <>
-      <S.Container onSubmit={handleLogin}>
-        <S.ContainerInner>
-          <S.Title>로그인</S.Title>
-          <Input
-            label="아이디"
-            type="email"
-            value={userId}
-            onChange={e => setUserId(e.target.value)}
-          />
-          <Input
-            label="비밀번호"
-            type="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-          <S.Button type="submit">로그인</S.Button>
-        </S.ContainerInner>
-      </S.Container>
-
-      {/* --------------------------- */}
-
-      <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Box component="form" onSubmit={handleLogin} sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="username"
-              label="Username"
-              name="username"
-              autoComplete="username"
-              autoFocus
-              value={userId}
-              onChange={e => setUserId(e.target.value)}
-              sx={{
-                fontFamily: 'Pretendard-Bold',
-                fontSize: '70px', // 폰트 크기 적용x?
-              }}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              sx={{
-                fontFamily: 'Pretendard-Bold',
-                fontSize: '70px', // 폰트 크기 적용x?
-              }}
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{
-                mt: 3,
-                mb: 2,
-                fontFamily: 'Pretendard-Bold',
-                fontSize: '16rem',
-              }}
-            >
-              Login
-            </Button>
-          </Box>
-        </Box>
-      </Container>
-    </>
+    <S.Container onSubmit={handleLogin}>
+      <S.ContainerInner>
+        <S.Title>로그인</S.Title>
+        <Input
+          label="아이디"
+          type="email"
+          value={userId}
+          onChange={e => setUserId(e.target.value)}
+        />
+        <Input
+          label="비밀번호"
+          type="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+        <S.Button type="submit">로그인</S.Button>
+      </S.ContainerInner>
+    </S.Container>
   );
 }
 
