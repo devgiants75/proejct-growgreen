@@ -35,16 +35,6 @@ const MyPageTabs: React.FC<MyPageTabsProps> = ({
             프로필 수정
           </Link>
         </ListItemButton>
-        {/* !개인정보 수정 */}
-        <ListItemButton
-          selected={selectedIndex === 1}
-          onClick={() => handleListItemClick(1)}
-        >
-          <Link to="/editPersonalInfo">
-            <ManageAccountsIcon sx={{ fontSize: '16px', ml: 2, mr: 1 }} />
-            개인정보 수정
-          </Link>
-        </ListItemButton>
       </List>
       <Divider />
       <List component="nav" aria-label="activity tab" sx={{ ml: 3 }}>

@@ -76,7 +76,7 @@ function Index() {
         <S.Title>로그인</S.Title>
         <Input
           label="아이디"
-          type="email"
+          type="userId"
           value={userId}
           onChange={e => setUserId(e.target.value)}
         />
