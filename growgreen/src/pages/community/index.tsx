@@ -3,6 +3,10 @@ import { Outlet } from 'react-router-dom';
 import SubTitle from '../../components/SubTitle/SubTitle';
 import Tab from '../../components/Tab/Tab';
 import { Box, Button, TextField } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import PostList from "../../components/List/PostList";
+// import data from '../../data.json';
 
 export const communityLink = [
   {
@@ -22,7 +26,27 @@ export const communityLink = [
   },
 ];
 
+const Wrapper = styled.div`
+    padding: 16px;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    max-width: 720px;
+    & > * {
+        :not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+`;
+
 function Index() {
+  const navigate = useNavigate();
   return (
     <>
       <SubTitle>커뮤니티</SubTitle>
@@ -60,6 +84,23 @@ function Index() {
           <Button>검색하기</Button>
         </Box>
       </Box>
+      <Wrapper>
+            <Container>
+                <Button
+                    title="글 작성하기"
+                    onClick={() => {
+                        navigate("/post-write");
+                    }}
+                />
+
+                <PostList
+                    posts={data}
+                    onClickItem={(item: { id: any; }) => {
+                        navigate(`/post/${item.id}`);
+                    }}
+                />
+            </Container>
+        </Wrapper>
     </>
   );
 }
