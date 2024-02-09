@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MyPageTabs from './myPageTab/MyPageTab';
+import ProfileSetting from './profile/profileSetting';
 
 export default function MyPage() {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
@@ -13,7 +14,7 @@ export default function MyPage() {
         selectedIndex={selectedIndex}
         handleListItemClick={handleClick}
       />
-      마이페이지
+      <ProfileSetting />
     </div>
   );
 }

@@ -27,11 +27,11 @@ const MyPageTabs: React.FC<MyPageTabsProps> = ({
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        maxWidth: 360,
+        maxWidth: 500,
         bgcolor: 'background.paper',
       }}
     >
-      <List component="nav" aria-label="profile tab">
+      <List component="nav" aria-label="profile tab" sx={{ ml: 4, mr: 4 }}>
         {/* 프로필 */}
         {/* 프로필 수정 */}
         <ListItemButton
@@ -46,7 +46,7 @@ const MyPageTabs: React.FC<MyPageTabsProps> = ({
       </List>
       <Divider />
       <List component="nav" aria-label="activity tab" sx={{ ml: 3 }}>
-        활동내역
+        {/* 활동내역 */}
         <ListItemButton
           selected={selectedIndex === 2}
           onClick={() => handleListItemClick(2)}

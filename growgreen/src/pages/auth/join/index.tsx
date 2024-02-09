@@ -4,6 +4,7 @@ import axios from 'axios';
 import Button from '@mui/material/Button';
 import { Box, Container, FormHelperText, Typography } from '@mui/material';
 import InputField from '../../../components/InputField';
+import * as S from './Index.Style';
 
 //! 회원가입
 
@@ -56,104 +57,69 @@ function Index() {
   };
 
   return (
-    <Box
-      sx={{
-        width: '100%',
-        mt: 30,
-      }}
-    >
-      <Typography
-        sx={{
-          textAlign: 'center',
-          mb: 5,
-          fontSize: '40rem',
-          fontFamily: 'Pretendard-Bold',
-          fontWeight: '600',
-          color: '#292e41',
-        }}
-      >
-        회원가입
-      </Typography>
-
-      <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            <InputField
-              label="ID"
-              type="text"
-              name="userId"
-              value={formData.userId}
-              onChange={handleInputChange}
-              autoFocus
-              required
-            />
-            <InputField
-              label="Password"
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-            />
-            <InputField
-              label="Password Confirm"
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-              required
-            />
-            {!isMatching ? (
-              <FormHelperText error>
-                비밀번호가 일치하지 않습니다.
-              </FormHelperText>
-            ) : (
-              formData.confirmPassword && (
-                <FormHelperText>비밀번호가 일치합니다.</FormHelperText>
-              )
-            )}
-            <InputField
-              label="Name"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-            />
-            <InputField
-              label="Nickname"
-              type="text"
-              name="nickName"
-              value={formData.nickName}
-              onChange={handleInputChange}
-              required
-            />
-            <InputField
-              label="Email (optional)"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              회원가입
-            </Button>
-            {/* <AdminSwitchLink /> */}
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+    <S.BoxContainer>
+      <S.ContainerInner>
+        <S.Title>회원가입</S.Title>
+        <S.FormBox onSubmit={handleSubmit}>
+          <InputField
+            label="아이디"
+            type="text"
+            name="userId"
+            value={formData.userId}
+            onChange={handleInputChange}
+            autoFocus
+            required
+          />
+          <InputField
+            label="비밀번호"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+          <InputField
+            label="비밀번호 확인"
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleInputChange}
+            required
+          />
+          {!isMatching ? (
+            <FormHelperText error>비밀번호가 일치하지 않습니다.</FormHelperText>
+          ) : (
+            formData.confirmPassword && (
+              <FormHelperText>비밀번호가 일치합니다.</FormHelperText>
+            )
+          )}
+          <InputField
+            label="이름"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            required
+          />
+          <InputField
+            label="닉네임"
+            type="text"
+            name="nickName"
+            value={formData.nickName}
+            onChange={handleInputChange}
+            required
+          />
+          <InputField
+            label="이메일 (선택사항)"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+          <S.Button type="submit">회원가입</S.Button>
+        </S.FormBox>
+      </S.ContainerInner>
+    </S.BoxContainer>
   );
 }
 
