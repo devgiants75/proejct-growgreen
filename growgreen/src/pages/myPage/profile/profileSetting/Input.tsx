@@ -2,6 +2,16 @@ import React from 'react';
 import { TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+interface IProp {
+  label: string;
+  type: string;
+  placeholder?: string;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  error?: boolean;
+  helperText?: string | boolean;
+  value?: string;
+}
+
 const StyledInput = styled(TextField)`
   & label {
     position: static;
@@ -23,51 +33,36 @@ const StyledInput = styled(TextField)`
     font-size: 16rem;
     padding: 8rem 12rem;
     border-radius: 6rem;
-    margin: 4rem 0 0;
+    margin: 4rem;
   }
 
   & input:focus {
     border-color: var(--gray80);
   }
 `;
-interface InputFieldProps {
-  label: string;
-  type: string;
-  name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  autoFocus?: boolean;
-  required?: boolean;
-}
 
 function Index({
   label,
   type,
-  name,
-  value,
+  placeholder,
   onChange,
-  autoFocus,
-  required,
-}: InputFieldProps) {
+  error,
+  helperText,
+  value,
+}: IProp) {
   return (
     <StyledInput
       label={label}
       type={type}
-      name={name}
-      variant="standard"
-      fullWidth
-      InputLabelProps={{ shrink: true }}
       value={value}
+      placeholder={placeholder}
+      variant="standard"
       onChange={onChange}
-      autoFocus={autoFocus}
-      required={required}
+      InputLabelProps={{ shrink: true }}
+      error={error}
+      helperText={helperText}
     />
   );
 }
 
 export default Index;
-
-Index.defaultProps = {
-  autoFocus: 'some default',
-  required: 'some default',
-};
