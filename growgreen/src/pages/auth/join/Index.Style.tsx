@@ -34,46 +34,6 @@ export const Title = styled.h3`
   text-align: center;
 `;
 
-export const Forgotten = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8rem;
-  justify-content: center;
-
-  & a {
-    font-size: 13rem;
-    color: var(--gray110);
-
-    &:not(:first-child):before {
-      content: '';
-    }
-  }
-
-  & hr {
-    display: block;
-    width: 1px;
-    height: 12px;
-    border: 0;
-    background: #d7dce5;
-  }
-`;
-
-export const SignUp = styled.div`
-  text-align: center;
-
-  & span {
-    color: var(--gray110);
-    font-size: 14rem;
-  }
-
-  & a {
-    margin-left: 8rem;
-    font-size: 14rem;
-    text-decoration: underline;
-    color: var(--blue80);
-  }
-`;
-
 export const Button = styled.button`
   font-size: 16rem;
   height: 48rem;

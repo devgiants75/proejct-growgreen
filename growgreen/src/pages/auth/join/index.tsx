@@ -1,38 +1,94 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import AdminSwitchLink from '../../components/AdminSwitchLink';
-import Button from '@mui/material/Button';
-import { Box, Container, FormHelperText, Typography } from '@mui/material';
-import InputField from '../../../components/InputField';
+import * as S from './Index.Style';
+import Input from '../../../components/Input/Input';
 
-//! 회원가입
+// ! 회원가입
+
+interface FormData {
+  userId: string;
+  password: string;
+  name: string;
+  nickName: string;
+  email: string;
+}
 
 function Index() {
+  const idRegExp = /^[a-zA-Z0-9_]{4,15}$/;
+  const passwordRegExp =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+  const emailRegExp = /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/;
   const [formData, setFormData] = useState({
     userId: '',
     password: '',
-    confirmPassword: '',
     name: '',
     nickName: '',
     email: '',
   });
-  const [isMatching, setIsMatching] = useState(true);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const [errors, setErrors] = useState<Record<keyof FormData, string>>({
+    userId: '',
+    password: '',
+    name: '',
+    nickName: '',
+    email: '',
+  });
 
-    if (name === 'confirmPassword') {
-      setIsMatching(formData.password === value);
-    }
-  };
+  const [isLogin, setIsLogin] = useState<boolean>(true);
+
+  const handleInputChange =
+    (name: keyof FormData) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData({
+        ...formData,
+        [name]: event.target.value,
+      });
+
+      setErrors({
+        ...errors,
+        [name]: '',
+      });
+    };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isMatching) {
-      console.error('비밀번호가 일치하지 않습니다.');
-      return; // 일치하지 않으면 제출을 중단합니다.
+    const newErrors = {
+      userId: '',
+      password: '',
+      confirmPassword: '',
+      name: '',
+      nickName: '',
+      email: '',
+    };
+
+    if (!formData.userId) {
+      newErrors.userId = '아이디를 입력해주세요.';
+    } else if (!idRegExp.test(formData.userId)) {
+      newErrors.userId = "4~15자의 영문, 숫자와 특수문자 '_'만 사용해주세요.";
+    }
+
+    if (!formData.password) {
+      newErrors.password = '비밀번호를 입력하세요.';
+    } else if (!passwordRegExp.test(formData.password)) {
+      newErrors.password =
+        '8~16자리 영문 대소문자, 숫자, 특수문자 중 3가지 이상 조합으로 만들어주세요.';
+    }
+
+    if (!formData.name) {
+      newErrors.name = '이름을 입력하세요.';
+    }
+
+    if (!formData.email) {
+      newErrors.email = '이메일을 입력하세요.';
+    } else if (!emailRegExp.test(formData.email)) {
+      newErrors.email =
+        '잘못된 이메일 주소입니다. 이메일 주소를 정확하게 입력해주세요.';
+    }
+
+    // 에러
+    if (Object.values(newErrors).some(error => !!error)) {
+      setErrors(newErrors);
+      return;
     }
 
     try {
@@ -56,104 +112,85 @@ function Index() {
   };
 
   return (
-    <Box
-      sx={{
-        width: '100%',
-        mt: 30,
-      }}
-    >
-      <Typography
-        sx={{
-          textAlign: 'center',
-          mb: 5,
-          fontSize: '40rem',
-          fontFamily: 'Pretendard-Bold',
-          fontWeight: '600',
-          color: '#292e41',
-        }}
-      >
-        회원가입
-      </Typography>
-
-      <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            <InputField
-              label="ID"
-              type="text"
-              name="userId"
-              value={formData.userId}
-              onChange={handleInputChange}
-              autoFocus
-              required
-            />
-            <InputField
-              label="Password"
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-            />
-            <InputField
-              label="Password Confirm"
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-              required
-            />
-            {!isMatching ? (
-              <FormHelperText error>
-                비밀번호가 일치하지 않습니다.
-              </FormHelperText>
-            ) : (
-              formData.confirmPassword && (
-                <FormHelperText>비밀번호가 일치합니다.</FormHelperText>
-              )
-            )}
-            <InputField
-              label="Name"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-            />
-            <InputField
-              label="Nickname"
-              type="text"
-              name="nickName"
-              value={formData.nickName}
-              onChange={handleInputChange}
-              required
-            />
-            <InputField
-              label="Email (optional)"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              회원가입
-            </Button>
-            {/* <AdminSwitchLink /> */}
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+    <S.Container onSubmit={handleSubmit}>
+      <S.ContainerInner>
+        <S.Title>회원가입</S.Title>
+        <Input
+          label="아이디"
+          type="id"
+          name="userId"
+          placeholder="4~15자리 / 영문, 숫자, 특수문자'_' 사용가능"
+          error={!!errors.userId}
+          helperText={errors.userId}
+          onChange={handleInputChange('userId')}
+        />
+        <Input
+          label="비밀번호"
+          type="password"
+          name="userPassword"
+          placeholder="8~12자리 / 영문 대소문자, 숫자, 특수문자 조합"
+          error={!!errors.password}
+          helperText={errors.password}
+          onChange={handleInputChange('password')}
+        />
+        <Input
+          label="이름"
+          type="name"
+          name="userName"
+          placeholder="이름 입력"
+          error={!!errors.name}
+          helperText={errors.name}
+          onChange={handleInputChange('name')}
+        />
+        <Input
+          label="이메일"
+          type="email"
+          name="userEmail"
+          placeholder="email@example.com"
+          error={!!errors.email}
+          helperText={errors.email}
+          onChange={handleInputChange('email')}
+        />
+        <Input
+          label="아이디"
+          type="id"
+          name="userId"
+          placeholder="4~15자리 / 영문, 숫자, 특수문자'_' 사용가능"
+          error={!!errors.userId}
+          helperText={errors.userId}
+          onChange={handleInputChange('userId')}
+        />
+        <Input
+          label="비밀번호"
+          type="password"
+          name="password"
+          onChange={handleInputChange('password')}
+          value={formData.password}
+        />
+        <Input
+          label="이름"
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange('name')}
+        />
+        <Input
+          label="닉네임"
+          type="text"
+          name="nickName"
+          value={formData.nickName}
+          onChange={handleInputChange('nickName')}
+        />
+        <Input
+          label="이메일"
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInputChange('email')}
+        />
+        <S.Button type="submit">회원가입</S.Button>
+      </S.ContainerInner>
+    </S.Container>
   );
 }
 
