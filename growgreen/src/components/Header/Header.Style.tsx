@@ -36,11 +36,12 @@ export const ButtonWrapper = styled.div`
   flex: 0 0 20%;
   display: flex;
   justify-content: flex-end;
+  gap: 10rem;
 
   & a {
     cursor: pointer;
     height: 33rem;
-    line-height: 33rem;
+    line-height: 31rem;
     background-color: var(--gray120);
     color: #fff;
     border-radius: 8rem;
@@ -48,5 +49,15 @@ export const ButtonWrapper = styled.div`
     padding: 0 12rem;
     font-weight: 600;
     font-size: 13rem;
+  }
+
+  & a:first-child {
+    border: 1px solid #d7dce5;
+    background: none;
+    color: var(--gray110);
+
+    &:hover {
+      background-color: #f4f6fa;
+    }
   }
 `;

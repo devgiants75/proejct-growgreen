@@ -1,59 +1,36 @@
 import React from 'react';
-import { TextField } from '@mui/material';
-import { styled } from '@mui/material/styles';
-
-const StyledInput = styled(TextField)`
-  & label {
-    position: static;
-    font-size: 14rem;
-  }
-
-  & label[data-shrink='true'] {
-    color: var(--gray100);
-    font-weight: 500;
-  }
-
-  & label + input {
-    margin-top: 4rem;
-  }
-
-  & input {
-    border: 1px solid var(--gray50);
-    height: 48rem;
-    font-size: 16rem;
-    padding: 8rem 12rem;
-    border-radius: 6rem;
-    margin: 4rem 0 0;
-  }
-
-  & input:focus {
-    border-color: var(--gray80);
-  }
-`;
+import { StyledInput } from './Input.Style';
 
 interface IProp {
   label: string;
   type: string;
+  name: string;
   placeholder?: string;
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: boolean;
   helperText?: string | boolean;
   value?: string;
+  autoFocus?: boolean;
+  required?: boolean;
 }
 
 function Input({
   label,
   type,
+  name,
   placeholder,
   onChange,
   error,
   helperText,
   value,
+  autoFocus,
+  required,
 }: IProp) {
   return (
     <StyledInput
       label={label}
       type={type}
+      name={name}
       value={value}
       placeholder={placeholder}
       variant="standard"
@@ -61,6 +38,8 @@ function Input({
       InputLabelProps={{ shrink: true }}
       error={error}
       helperText={helperText}
+      autoFocus={autoFocus}
+      required={required}
     />
   );
 }
