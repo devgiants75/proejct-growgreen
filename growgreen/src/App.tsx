@@ -53,11 +53,11 @@ function App() {
           <Route path="inquiry" element={<Inquiry />} />
         </Route>
 
-        <Route path="/myPage">
+        <Route path="/my-page">
           <Route index element={<MyPage />} />
-          <Route path="commentsWritten" element={<CommentsWritten />} />
-          <Route path="postWritten" element={<PostWritten />} />
-          <Route path="profileSetting" element={<ProfileSetting />} />
+          <Route path="comments-written" element={<CommentsWritten />} />
+          <Route path="post-written" element={<PostWritten />} />
+          <Route path="profile-setting" element={<ProfileSetting />} />
         </Route>
 
         <Route path="/diet" element={<Diet />} />

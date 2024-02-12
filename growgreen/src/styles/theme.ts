@@ -57,8 +57,9 @@ export const theme = createTheme({
     MuiPopover: {
       styleOverrides: {
         paper: {
-          borderRadius: '16rem',
-          boxShadow: 'none',
+          borderRadius: '8rem',
+          boxShadow:
+            'rgba(20, 20, 20, 0.12) 4px 12px 24px 0, rgba(20, 20, 20, 0.08) 0 1px 4px 0',
           background: 'none',
           color: 'inherit',
         },
@@ -92,6 +93,9 @@ export const theme = createTheme({
           },
           '::before': {
             display: 'none',
+          },
+          '&.Mui-error input': {
+            borderColor: '#ef4444',
           },
         },
         input: {
