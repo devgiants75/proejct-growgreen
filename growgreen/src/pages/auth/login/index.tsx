@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
 import { Link, useNavigate } from 'react-router-dom';
-import { useStore } from '../../../stores/user.store';
+import useStore from '../../../stores/user.store';
 import * as S from './Index.Style';
 import Input from '../../../components/Input/Input';
 import AuthResult from '../../../components/AuthResult';
@@ -122,7 +122,7 @@ function Index() {
         <S.Button type="submit">로그인</S.Button>
         <S.SignUp>
           <span>아직 회원이 아니신가요?</span>
-          <Link to="/signup">회원가입</Link>
+          <Link to="/join">회원가입</Link>
         </S.SignUp>
         {isLogin ? (
           ''

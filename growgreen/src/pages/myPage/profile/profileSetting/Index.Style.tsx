@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const BoxContainer = styled.div`
-  display: 'flex';
-  flexdirection: 'column';
+  display: flex;
+  flex-direction: column;
   max-width: 600rem;
   margin: 120rem auto;
 
@@ -31,30 +31,30 @@ export const Title = styled.h3`
 `;
 
 export const Box = styled.div`
-  display: 'flex';
-  flexdirection: 'column';
-  align-items: 'center';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: '100%';
 `;
 
 export const Button1 = styled.button`
-  display: flex,
-  align-items: 'center',
+  display: flex;
+  align-items: center;
   font-size: 16rem;
   width: 90rem;
   height: 48rem;
-  background-color: var(--blue80);
+  background-color: var(--green90);
   border-radius: 8rem;
   color: #fff;
   font-weight: 600;
 `;
 export const Button2 = styled.button`
-  display: flex,
-  align-items: 'center',
+  display: flex;
+  align-items: center;
   font-size: 16rem;
   width: 90rem;
   height: 48rem;
-  background-color: var(--blue80);
+  background-color: var(--green90);
   border-radius: 8rem;
   color: #fff;
   font-weight: 600;
