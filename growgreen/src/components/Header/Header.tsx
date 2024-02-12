@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import { Popover, Tooltip } from '@mui/material';
+import { Popover } from '@mui/material';
 import useStore from '../../stores/user.store';
 import * as S from './Header.Style';
 import Nav from '../Nav/Nav';
 import logo from '../../assets/logo.svg';
 import { MYPAGE_LIST } from '../../constants/MyPageMenu';
-import { ReactComponent as Logout } from '../../assets/images/logout.svg';
 
 function Header() {
   const navigator = useNavigate();
