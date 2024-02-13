@@ -6,7 +6,6 @@ import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import Divider from '@mui/material/Divider';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes';
 import ArticleIcon from '@mui/icons-material/Article';
 
@@ -22,10 +21,19 @@ const MyPageTabs: React.FC<MyPageTabsProps> = ({
   handleListItemClick,
 }) => {
   return (
-    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <List component="nav" aria-label="profile tab" sx={{ ml: 3 }}>
-        프로필
-        {/* !프로필 수정 */}
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100%',
+        maxWidth: 500,
+        bgcolor: 'background.paper',
+      }}
+    >
+      <List component="nav" aria-label="profile tab" sx={{ ml: 4, mr: 4 }}>
+        {/* 프로필 */}
+        {/* 프로필 수정 */}
         <ListItemButton
           selected={selectedIndex === 0}
           onClick={() => handleListItemClick(0)}
@@ -35,20 +43,10 @@ const MyPageTabs: React.FC<MyPageTabsProps> = ({
             프로필 수정
           </Link>
         </ListItemButton>
-        {/* !개인정보 수정 */}
-        <ListItemButton
-          selected={selectedIndex === 1}
-          onClick={() => handleListItemClick(1)}
-        >
-          <Link to="/editPersonalInfo">
-            <ManageAccountsIcon sx={{ fontSize: '16px', ml: 2, mr: 1 }} />
-            개인정보 수정
-          </Link>
-        </ListItemButton>
       </List>
       <Divider />
       <List component="nav" aria-label="activity tab" sx={{ ml: 3 }}>
-        활동내역
+        {/* 활동내역 */}
         <ListItemButton
           selected={selectedIndex === 2}
           onClick={() => handleListItemClick(2)}

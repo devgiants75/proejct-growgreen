@@ -20,7 +20,6 @@ import Stretch from './pages/exercise/stretch';
 import Home from './pages/home';
 // myPage
 import CommentsWritten from './pages/myPage/Activity/commentsWritten';
-import EditPersonalInfo from './pages/myPage/profile/editPersonalInfo';
 import MyPageHome from './pages/myPage/myPageHome';
 import PostWritten from './pages/myPage/Activity/postWritten';
 import ProfileSetting from './pages/myPage/profile/profileSetting';
@@ -54,12 +53,11 @@ function App() {
           <Route path="inquiry" element={<Inquiry />} />
         </Route>
 
-        <Route path="/myPage">
+        <Route path="/my-page">
           <Route index element={<MyPage />} />
-          <Route path="commentsWritten" element={<CommentsWritten />} />
-          <Route path="postWritten" element={<PostWritten />} />
-          <Route path="editPersonalInfo" element={<EditPersonalInfo />} />
-          <Route path="profileSetting" element={<ProfileSetting />} />
+          <Route path="comments-written" element={<CommentsWritten />} />
+          <Route path="post-written" element={<PostWritten />} />
+          <Route path="profile-setting" element={<ProfileSetting />} />
         </Route>
 
         <Route path="/diet" element={<Diet />} />
@@ -81,7 +79,6 @@ function App() {
         {/* myPage */}
         <Route path="/postWritten" element={<PostWritten />} />
         <Route path="/commentsWritten" element={<CommentsWritten />} />
-        <Route path="/editPersonalInfo" element={<EditPersonalInfo />} />
         <Route path="/profileSetting" element={<ProfileSetting />} />
         <Route path="/myPageHome" element={<MyPageHome />} />
         <Route path="/settings" element={<Settings />} />

@@ -17,14 +17,16 @@
       "userId": "userId1",
       "password": "userpassword1",
       "name": "이이름",
-      "email": "user1@naver.com"
+      "email": "user1@naver.com",
+      "nickName": "이름이"
     },
     {
       "id": "2",
       "userId": "userId2",
       "password": "userpassword2",
       "name": "이성함",
-      "email": "user2@naver.com"
+      "email": "user2@naver.com",
+      "nickName": "성함이"
     }
   ],
   "posts": [
