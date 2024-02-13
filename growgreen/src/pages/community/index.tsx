@@ -6,7 +6,7 @@ import { Box, Button, TextField } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import PostList from "../../components/List/PostList";
-// import data from '../../data.json';
+import axios from 'axios';
 
 export const communityLink = [
   {

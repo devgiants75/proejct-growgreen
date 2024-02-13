@@ -32,13 +32,19 @@
       "id": "1",
       "title": "First Post",
       "content": "This is the first post.",
-      "authorId": 1
+      "authorId": 1,
+      "category": "질문 & 고민",
+      "viewNumber": 1,
+      "commentsNumver": 1
     },
     {
       "id": "2",
       "title": "Second Post",
       "content": "This is the second post.",
-      "authorId": 1
+      "authorId": 1,
+      "category": "자유게시판",
+      "viewNumber": 1,
+      "commentsNumver": 1
     }
   ],
   "comments": [
