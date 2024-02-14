@@ -121,6 +121,14 @@ export const theme = createTheme({
         },
       },
     },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent',
+          cursor: 'pointer',
+        },
+      },
+    },
   },
 });
 
