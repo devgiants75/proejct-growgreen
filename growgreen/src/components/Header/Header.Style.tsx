@@ -1,6 +1,4 @@
 import { styled } from 'styled-components';
-import emotion from '@emotion/styled';
-import { Button, Paper, Popover } from '@mui/material';
 
 export const Header = styled.header<{ $scroll: boolean }>`
   width: 100%;
@@ -119,6 +117,13 @@ export const UserImg = styled.div`
   border-radius: 16px;
   box-sizing: border-box;
   background: #fff;
+
+  & img {
+    width: 32rem;
+    height: 32rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
 `;
 
 export const UserArrow = styled.div`
@@ -129,39 +134,6 @@ export const UserArrow = styled.div`
   z-index: 2;
   width: 16px;
   height: 16px;
-`;
-
-export const UserLogout = styled.button`
-  cursor: pointer;
-  height: 33rem;
-  line-height: 31rem;
-  background-color: var(--gray120);
-  color: #fff;
-  border-radius: 8rem;
-  border: 0;
-  padding: 0 12rem;
-  font-weight: 600;
-  font-size: 13rem;
-`;
-
-export const GnbList = emotion(Button)`
-  display: flex;
-  font-size: 14rem;
-  height: 36rem;
-  line-height: 36rem;
-  border-radius: 6rem;
-  padding: 0 12rem;
-  transition: background-color 0.2s ease 0s;
-  color: var(--gray120);
-  font-weight: 600;
-
-  & a {
-    color: var(--gray120);
-  }
-
-  &:hover {
-    background-color: var(--gray20);
-  }
 `;
 
 export const MyList = styled.div`
@@ -204,14 +176,4 @@ export const MyLink = styled.span`
   & span.logout {
     color: #eb413f;
   }
-`;
-
-export const StyledPopover = emotion(Paper)`
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 16rem;
-  box-shadow:
-    rgba(20, 20, 20, 0.12) 4px 12px 24px 0px,
-    rgba(20, 20, 20, 0.08) 0px 1px 4px 0px;
 `;

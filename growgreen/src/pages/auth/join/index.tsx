@@ -12,6 +12,7 @@ interface FormData {
   name: string;
   nickName: string;
   email: string;
+  avatar: string;
 }
 
 function Index() {
@@ -25,6 +26,7 @@ function Index() {
     name: '',
     nickName: '',
     email: '',
+    avatar: '',
   });
 
   const [errors, setErrors] = useState<Record<keyof FormData, string>>({
@@ -33,6 +35,7 @@ function Index() {
     name: '',
     nickName: '',
     email: '',
+    avatar: '',
   });
 
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -59,6 +62,7 @@ function Index() {
       name: '',
       nickName: '',
       email: '',
+      avatar: '',
     };
 
     if (!formData.userId) {
@@ -103,6 +107,7 @@ function Index() {
         name: formData.name,
         nickName: formData.nickName,
         email: formData.email,
+        avatar: formData.avatar,
       });
 
       // 성공적인 회원가입 후의 로직

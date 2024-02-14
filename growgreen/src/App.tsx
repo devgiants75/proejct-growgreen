@@ -19,10 +19,9 @@ import Stretch from './pages/exercise/stretch';
 // home
 import Home from './pages/home';
 // myPage
-import CommentsWritten from './pages/myPage/Activity/commentsWritten';
-import MyPageHome from './pages/myPage/myPageHome';
-import PostWritten from './pages/myPage/Activity/postWritten';
-import ProfileSetting from './pages/myPage/profile/profileSetting';
+import Comments from './pages/myPage/comment';
+import MyArticle from './pages/myPage/article';
+import Profile from './pages/myPage/profile';
 import Settings from './pages/myPage/settings';
 import Exercise from './pages/exercise';
 import Diet from './pages/diet';
@@ -54,34 +53,32 @@ function App() {
         </Route>
 
         <Route path="/my-page">
-          <Route index element={<MyPage />} />
-          <Route path="comments-written" element={<CommentsWritten />} />
-          <Route path="post-written" element={<PostWritten />} />
-          <Route path="profile-setting" element={<ProfileSetting />} />
+          <Route path="comment" element={<Comments />} />
+          <Route path="article" element={<MyArticle />} />
+          <Route path="profile" index element={<Profile />} />
         </Route>
 
-        <Route path="/diet" element={<Diet />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/challenge" element={<Challenge />} />
-        <Route path="/myPage" element={<MyPage />} />
-        <Route path="/*" element={<Page404 />} />
-        {/* auth */}
+        {/* <Route path="/diet" element={<Diet />} /> */}
+        {/* <Route path="/community" element={<Community />} /> */}
+        {/* <Route path="/challenge" element={<Challenge />} /> */}
+        {/* <Route path="/myPage" element={<MyPage />} /> */}
+        {/* <Route path="/*" element={<Page404 />} /> */}
+        {/* /!* auth *!/ */}
         <Route path="/join" element={<Join />} />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
-        {/* challenge */}
-        <Route path="/challenge" element={<Challenge />} />
-        {/* commnity */}
-        <Route path="/board" element={<Board />} />
-        <Route path="/inquiry" element={<Inquiry />} />
-        {/* home */}
-        <Route path="/home" element={<Home />} />
-        {/* myPage */}
-        <Route path="/postWritten" element={<PostWritten />} />
-        <Route path="/commentsWritten" element={<CommentsWritten />} />
-        <Route path="/profileSetting" element={<ProfileSetting />} />
-        <Route path="/myPageHome" element={<MyPageHome />} />
-        <Route path="/settings" element={<Settings />} />
+        {/* /!* challenge *!/ */}
+        {/* <Route path="/challenge" element={<Challenge />} /> */}
+        {/* /!* commnity *!/ */}
+        {/* <Route path="/board" element={<Board />} /> */}
+        {/* <Route path="/inquiry" element={<Inquiry />} /> */}
+        {/* /!* home *!/ */}
+        {/* <Route path="/home" element={<Home />} /> */}
+        {/* /!* myPage *!/ */}
+        {/* <Route path="/postWritten" element={<PostWritten />} /> */}
+        {/* <Route path="/commentsWritten" element={<CommentsWritten />} /> */}
+        {/* <Route path="/profileSetting" element={<ProfileSetting />} /> */}
+        {/* <Route path="/settings" element={<Settings />} /> */}
       </Routes>
       <Footer />
     </>
