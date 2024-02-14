@@ -1,25 +1,26 @@
-import React from "react";
-import styled from "styled-components";
-import PostListItem from "./PostListItem";
+import React from 'react';
+import styled from 'styled-components';
+import PostListItem from './PostListItem';
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    & > * {
-        :not(:last-child) {
-            margin-bottom: 16px;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  & > * {
+    :not(:last-child) {
+      margin-bottom: 16px;
     }
+  }
 `;
 
-function PostList(props: { posts: any; onClickItem: any; }) {
+function PostList(props: { posts: any; onClickItem: any }) {
   const { posts, onClickItem } = props;
 
   return (
     <Wrapper>
-      {posts.map((post: { id: React.Key | null | undefined; }, index: any) => {
+      {posts.map((post: { id: React.Key | null | undefined }, index: any) => {
         return (
           <PostListItem
             key={post.id}
@@ -33,4 +34,5 @@ function PostList(props: { posts: any; onClickItem: any; }) {
     </Wrapper>
   );
 }
+
 export default PostList;

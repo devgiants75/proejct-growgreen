@@ -1,12 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { Box, Button, TextField } from '@mui/material';
+import styled from 'styled-components';
+import axios from 'axios';
 import SubTitle from '../../components/SubTitle/SubTitle';
 import Tab from '../../components/Tab/Tab';
-import { Box, Button, TextField } from '@mui/material';
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import PostList from "../../components/List/PostList";
-import axios from 'axios';
+import PostList from '../../components/List/PostList';
 
 export const communityLink = [
   {
@@ -27,22 +26,23 @@ export const communityLink = [
 ];
 
 const Wrapper = styled.div`
-    padding: 16px;
-    width: calc(100% - 32px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  padding: 16px;
+  width: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Container = styled.div`
-    width: 100%;
-    max-width: 720px;
-    & > * {
-        :not(:last-child) {
-            margin-bottom: 16px;
-        }
+  width: 100%;
+  max-width: 720px;
+
+  & > * {
+    :not(:last-child) {
+      margin-bottom: 16px;
     }
+  }
 `;
 
 function Index() {
@@ -57,7 +57,7 @@ function Index() {
           display: 'flex',
           justifyContent: 'space-between',
           width: '100%',
-          padding: 2
+          padding: 2,
         }}
       >
         {/* 체크 박스 및 텍스트 */}
@@ -71,36 +71,36 @@ function Index() {
         <Box>
           <Box
             sx={{
-              fontSize: '16rem'
+              fontSize: '16rem',
             }}
           >
             <TextField
-              id='search-input'
-              variant='outlined'
-              size='small'
-              placeholder='커뮤니티 내에서 검색'
+              id="search-input"
+              variant="outlined"
+              size="small"
+              placeholder="커뮤니티 내에서 검색"
             />
           </Box>
           <Button>검색하기</Button>
         </Box>
       </Box>
       <Wrapper>
-            <Container>
-                <Button
-                    title="글 작성하기"
-                    onClick={() => {
-                        navigate("/post-write");
-                    }}
-                />
+        <Container>
+          <Button
+            title="글 작성하기"
+            onClick={() => {
+              navigate('/post-write');
+            }}
+          />
 
-                <PostList
-                    posts={data}
-                    onClickItem={(item: { id: any; }) => {
-                        navigate(`/post/${item.id}`);
-                    }}
-                />
-            </Container>
-        </Wrapper>
+          <PostList
+            posts=""
+            onClickItem={(item: { id: any }) => {
+              navigate(`/post/${item.id}`);
+            }}
+          />
+        </Container>
+      </Wrapper>
     </>
   );
 }
