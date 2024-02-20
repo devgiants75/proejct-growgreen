@@ -49,6 +49,7 @@ function Index() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // 유효성 검사
     const newErrors = {
       userId: '',
       password: '',
@@ -68,6 +69,7 @@ function Index() {
       return;
     }
 
+    // 로그인
     try {
       // 사용자 목록을 가져옵니다.
       const usersResponse = await axios.get('http://localhost:5000/users');
@@ -82,12 +84,15 @@ function Index() {
 
       if (user) {
         // 임의의 토큰 생성 (실제 환경에서는 안전한 방식으로 생성 필요)
-        const token = `faketoken-${new Date().getTime()}`;
+        // const token = `faketoken-${new Date().getTime()}`;
+        // const token = user.id;
+        // const expiration = new Date(Date.now() + 3600 * 1000);
 
-        // 쿠키에 토큰과 사용자 유형 저장
-        setCookie('userToken', token, { path: '/' });
-
+        // // 쿠키에 토큰과 사용자 유형 저장
+        // setCookie('userToken', token, { path: '/', expires: expiration });
         setUser(user);
+
+        // window.localStorage.setItem('token', token);
 
         navigate('/');
       } else {

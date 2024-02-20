@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
 // 404page
+import axios from 'axios';
+import { useCookies } from 'react-cookie';
 import Page404 from './pages/page404';
 // auth
 import Join from './pages/auth/join';
 import Login from './pages/auth/login';
 import Logout from './pages/auth/logout';
 // challenge
-import Challenge from './pages/challenge';
 // community
 import Board from './pages/community/board';
 import Inquiry from './pages/community/inquiry';
@@ -19,18 +20,39 @@ import Stretch from './pages/exercise/stretch';
 // home
 import Home from './pages/home';
 // myPage
-import Comments from './pages/myPage/comment';
+import Comment from './pages/myPage/comment';
 import MyArticle from './pages/myPage/article';
 import Profile from './pages/myPage/profile';
-import Settings from './pages/myPage/settings';
 import Exercise from './pages/exercise';
 import Diet from './pages/diet';
 import Community from './pages/community';
 import MyPage from './pages/myPage';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import useStore from './stores/user.store';
 
 function App() {
+  const { user, setUser } = useStore();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token && !user) {
+      axios('http://localhost:4080/api/user/', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then(response => {
+          const responseData = response.data.data;
+          setUser(responseData);
+        })
+        .catch(error => {
+          // setCookies('token', new Date());
+        });
+    }
+    if (!token && user) {
+      // setUser(null);
+    }
+  }, [setUser, user]);
+
   return (
     <>
       <Header />
@@ -52,8 +74,8 @@ function App() {
           <Route path="inquiry" element={<Inquiry />} />
         </Route>
 
-        <Route path="/my-page">
-          <Route path="comment" element={<Comments />} />
+        <Route path="/my-page" element={<MyPage />}>
+          <Route path="comment" element={<Comment />} />
           <Route path="article" element={<MyArticle />} />
           <Route path="profile" index element={<Profile />} />
         </Route>

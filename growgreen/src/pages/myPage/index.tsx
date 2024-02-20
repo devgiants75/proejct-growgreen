@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
-import MyPageTabs from './myPageTab/MyPageTab';
-import ProfileSetting from './profile';
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import useStore from '../../stores/user.store';
 
 export default function MyPage() {
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const handleClick = (index: number) => {
-    setSelectedIndex(index);
-  };
-
-  return (
-    <div>
-      <ProfileSetting />
-    </div>
-  );
+  const { user } = useStore();
+  return user ? <Outlet /> : <Navigate to="/login" />;
 }
