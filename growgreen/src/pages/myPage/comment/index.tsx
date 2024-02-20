@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import { Box, Grid } from '@mui/material';
-import MyPageTabs from '../myPageTab/MyPageTab';
+import MyPageTabs from '../../../components/myPageTab/MyPageTab';
 
 // 작성된 댓글 설정
 function Index() {
@@ -10,7 +8,12 @@ function Index() {
     setSelectedIndex(index);
   };
 
-  return <div>Comment</div>;
+  return (
+    <>
+      <MyPageTabs index={2} />
+      <div>asdkfj</div>
+    </>
+  );
 }
 
 export default Index;

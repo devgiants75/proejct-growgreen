@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import { Box, Grid } from '@mui/material';
-import MyPageTabs from '../myPageTab/MyPageTab';
+import MyPageTabs from '../../../components/myPageTab/MyPageTab';
 
 //! 작성된 게시물 페이지
 function Index() {
@@ -10,7 +8,12 @@ function Index() {
     setSelectedIndex(index);
   };
 
-  return <Grid container>Article</Grid>;
+  return (
+    <>
+      <MyPageTabs index={1} />
+      <div>saldkfj</div>
+    </>
+  );
 }
 
 export default Index;

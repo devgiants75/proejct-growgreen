@@ -18,7 +18,7 @@ export const MYPAGE_LIST = [
   {
     id: 2,
     title: '내가 쓴 댓글',
-    url: '/my-page/comments',
+    url: '/my-page/comment',
     svg: SVGComment,
   },
 ];

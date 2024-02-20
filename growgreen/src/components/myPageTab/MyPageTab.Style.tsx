@@ -10,7 +10,7 @@ export const Tab = styled.div`
 
   & a {
     height: 48rem;
-    padding: 0 24rem;
+    padding: 0 12rem;
     line-height: 46rem;
     color: var(--gray90);
     border-radius: 8rem;

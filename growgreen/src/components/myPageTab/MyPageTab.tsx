@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as S from './MyPageTab.Style';
-import { MYPAGE_LIST } from '../../../constants/MyPageMenu';
+import { MYPAGE_LIST } from '../../constants/MyPageMenu';
 
 function MyPageTab({ index }: { index: number }) {
   const [activeTab, setActiveTab] = useState<string>(

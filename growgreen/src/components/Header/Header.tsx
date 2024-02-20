@@ -56,6 +56,7 @@ function Header() {
       removeUser(user.id);
       removeCookie('userToken', { path: '/' }); // userToken Cookie
       removeCookie('userType', { path: '/' }); // userType Cookie 삭제
+      localStorage.clear();
     }
     setAnchorEl(null);
   };
@@ -69,7 +70,7 @@ function Header() {
           </Link>
         </S.Logo>
         <Nav />
-        {cookies.userToken && user ? (
+        {user ? (
           <S.User>
             <S.UserButton onClick={handleClick}>
               <S.UserImg>

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Avatar } from '@mui/material';
 import axios from 'axios';
 import isEqual from 'lodash/isEqual';
-import MyPageTabs from '../myPageTab/MyPageTab';
+import MyPageTabs from '../../../components/myPageTab/MyPageTab';
 import { User, FormData } from '../../../utils/types';
 import useStore from '../../../stores/user.store';
 import * as S from './Index.Style';
