@@ -33,7 +33,7 @@ const StyledInput = styled(TextField)`
     font-size: 16rem;
     padding: 8rem 12rem;
     border-radius: 6rem;
-    margin: 4rem;
+    margin: 4rem 0 0;
   }
 
   & input:focus {

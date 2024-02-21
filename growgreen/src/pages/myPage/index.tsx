@@ -14,7 +14,6 @@ export default function MyPage() {
         selectedIndex={selectedIndex}
         handleListItemClick={handleClick}
       />
-      <ProfileSetting />
     </div>
   );
 }

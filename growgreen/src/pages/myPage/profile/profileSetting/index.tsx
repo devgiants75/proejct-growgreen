@@ -102,39 +102,42 @@ function Index() {
         <Box p={2}>
           <Outlet />
           <S.BoxContainer>
-            <S.Box>
+            <S.InnerBox>
               <S.Title>프로필 정보 수정</S.Title>
-              <label htmlFor="profile-image-input">
-                <input
-                  id="profile-image-input"
-                  type="file"
-                  style={{
-                    display: 'none',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                  accept="image/jpg,image/png,image/jpeg"
-                  name="profileImage"
-                  onChange={onChange}
-                  ref={fileInput}
-                />
-                <Avatar
-                  src={profileImage}
-                  sx={{
-                    width: 200,
-                    height: 200,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                  onClick={() => {
-                    if (fileInput.current) {
-                      fileInput.current.click();
-                    }
-                  }}
-                />
-                <S.Button1>사진 수정</S.Button1>
-              </label>
+              <S.LabelWrapper>
+                <label htmlFor="profile-image-input">
+                  <input
+                    id="profile-image-input"
+                    type="file"
+                    style={{
+                      display: 'none',
+                    }}
+                    accept="image/jpg,image/png,image/jpeg"
+                    name="profileImage"
+                    onChange={onChange}
+                    ref={fileInput}
+                  />
+                  <S.AvatarWrapper>
+                    <Avatar
+                      src={profileImage}
+                      sx={{
+                        width: 160,
+                        height: 160,
+                        display: 'flex',
+                        alignItems: 'center',
+                        ml: '70rem',
+                        mb: '20rem',
+                      }}
+                      onClick={() => {
+                        if (fileInput.current) {
+                          fileInput.current.click();
+                        }
+                      }}
+                    />
+                  </S.AvatarWrapper>
+                  <S.Text>* 프로필을 클릭하시면 사진 수정이 가능합니다.</S.Text>
+                </label>
+              </S.LabelWrapper>
               <br />
               <Input
                 label="이름"
@@ -168,7 +171,7 @@ function Index() {
               />
               <S.Button2 onClick={handleSave}>프로필 저장</S.Button2>
               {isChanged && <S.Message>변경사항이 저장되었습니다.</S.Message>}
-            </S.Box>
+            </S.InnerBox>
           </S.BoxContainer>
         </Box>
       </Grid>
