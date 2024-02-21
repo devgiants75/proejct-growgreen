@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import MyPageTabs from './myPageTab/MyPageTab';
-import ProfileSetting from './profile/profileSetting';
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import useStore from '../../stores/user.store';
 
 export default function MyPage() {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
@@ -14,6 +14,7 @@ export default function MyPage() {
         selectedIndex={selectedIndex}
         handleListItemClick={handleClick}
       />
+      <ProfileSetting />
     </div>
   );
 }

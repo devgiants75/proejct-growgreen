@@ -17,6 +17,7 @@
     "@types/react-dom": "^18.2.18",
     "axios": "^1.6.5",
     "json-server": "^1.0.0-alpha.21",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-cookie": "^7.0.2",
     "react-dom": "^18.2.0",
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",

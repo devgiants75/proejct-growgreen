@@ -10,7 +10,7 @@ export const Nav = styled.nav`
 
   & a {
     cursor: pointer;
-    border-radius: 4rem;
+    border-radius: 6rem;
     padding: 0 11rem;
     font-size: 14rem;
     color: var(--gray120);
